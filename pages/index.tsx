@@ -2,7 +2,15 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/indexMain.module.scss'
+import Typical from 'react-typical'
 const Home: NextPage = () => {
+  const Typing = () => (
+    <Typical
+      steps={['Hello', 1000, 'Hello world!', 1000]}
+      loop={Infinity}
+      wrapper='p'
+    />
+  )
   return (
     <div className={styles.main}>
       <Head>
@@ -50,7 +58,38 @@ const Home: NextPage = () => {
             <h1>الصفحة الرئيسية</h1>
           </div>
         </div>
-        <div>hhhh</div>
+        <div className={styles.searchBar}>
+          <div className={styles.searchInput}>
+            <input type='text' placeholder={Typing} />
+            <button>search</button>
+          </div>
+          <div className={styles.searchContent}>
+            <span>
+              <p>icon</p>
+              <p>text</p>
+            </span>
+            <span>
+              <p>icon</p>
+              <p>text</p>
+            </span>
+            <span>
+              <p>icon</p>
+              <p>text</p>
+            </span>
+            <span>
+              <p>icon</p>
+              <p>text</p>
+            </span>
+            <span>
+              <p>icon</p>
+              <p>text</p>
+            </span>
+            <span>
+              <p>icon</p>
+              <p>text</p>
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   )
