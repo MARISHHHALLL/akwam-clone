@@ -4,13 +4,6 @@ import Image from 'next/image'
 import styles from '../styles/indexMain.module.scss'
 import Typical from 'react-typical'
 const Home: NextPage = () => {
-  const Typing = () => (
-    <Typical
-      steps={['Hello', 1000, 'Hello world!', 1000]}
-      loop={Infinity}
-      wrapper='p'
-    />
-  )
   return (
     <div className={styles.main}>
       <Head>
@@ -60,34 +53,52 @@ const Home: NextPage = () => {
         </div>
         <div className={styles.searchBar}>
           <div className={styles.searchInput}>
-            <input type='text' placeholder={Typing} />
-            <button>search</button>
+            <span className={styles.inputs}>
+              <input type='text' name='search' />
+              <label htmlFor='search'>
+                <Typical
+                  steps={[
+                    '... ابحث باسم الفيلم او المسلسل او لعبة او برنامج ترغب فيه',
+                    1000,
+                    'مثال : الجزيرة',
+                    1000,
+                    'مثال : ادوبي',
+                    1000,
+                    'ابحث هنا في اكوام باسم الفيلم او المسلسل او اي لعبة او برنامج ترغب فيه',
+                    1000,
+                  ]}
+                  loop={Infinity}
+                  wrapper='p'
+                />
+              </label>
+            </span>
+            <button>بحث</button>
           </div>
           <div className={styles.searchContent}>
-            <span>
-              <p>icon</p>
-              <p>text</p>
-            </span>
-            <span>
-              <p>icon</p>
-              <p>text</p>
-            </span>
-            <span>
-              <p>icon</p>
-              <p>text</p>
-            </span>
-            <span>
-              <p>icon</p>
-              <p>text</p>
-            </span>
-            <span>
-              <p>icon</p>
-              <p>text</p>
-            </span>
-            <span>
-              <p>icon</p>
-              <p>text</p>
-            </span>
+            <a href='#'>
+              <Image src='/assets/images/mix.svg' height={38} width={38} />
+              <p>منوعات</p>
+            </a>
+            <a href='#'>
+              <Image src='/assets/images/programs.svg' height={38} width={38} />
+              <p>برامج</p>
+            </a>
+            <a href='#'>
+              <Image src='/assets/images/games.svg' height={38} width={38} />
+              <p>العاب</p>
+            </a>
+            <a href='#'>
+              <Image src='/assets/images/tv.svg' height={38} width={38} />
+              <p>تلفزيون</p>
+            </a>
+            <a href='#'>
+              <Image src='/assets/images/series.svg' height={38} width={38} />
+              <p>مسلسلات</p>
+            </a>
+            <a href='#'>
+              <Image src='/assets/images/films.svg' height={38} width={38} />
+              <p>افلام</p>
+            </a>
           </div>
         </div>
       </div>
